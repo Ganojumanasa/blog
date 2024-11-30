@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Manasa Blog</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>MANASA GANOJU</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'workshops' %}">Workshops</a></li>
+                <li><a href="{% url 'seminar' %}">Seminars</a></li>
+                <li><a href="{% url 'res' %}">Resource Person</a></li>
+                <li><a href="{% url 'pub' %}">Publications</a></li>
+                <li><a href="{% url 'app' %}">Appreciations</a></li>
+                <li><a href="{% url 'pro' %}">Professional Body Memberships</a></li>
+            </ul>
+            <form method="get" action="#">
+                <input type="text" placeholder="search" name="q">
+                <button type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Dynamic Views. Powered by Django.</p>
+    </footer>
+</body>
+</html>
